@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AWS Security Posture Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      padding: 40px 30px;
+    }
+    h1 {
+      color: #38bdf8;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+    .sub {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+    .score {
+      font-size: 6rem;
+      font-weight: bold;
+      color: #ef4444;
+      text-align: center;
+      margin: 20px 0;
+      letter-spacing: -2px;
+    }
+    .score-label {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.95rem;
+      margin-top: -16px;
+      margin-bottom: 30px;
+    }
+    .cards {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0 40px;
+    }
+    .card {
+      background: #1e293b;
+      border-radius: 14px;
+      padding: 20px 30px;
+      text-align: center;
+      min-width: 120px;
+      border: 1px solid #334155;
+    }
+    .card .num {
+      font-size: 2.4rem;
+      font-weight: bold;
+    }
+    .card .lbl {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .section-title {
+      color: #38bdf8;
+      font-size: 1.1rem;
+      margin: 30px 0 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #1e293b;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th {
+      background: #1e293b;
+      padding: 12px 14px;
+      text-align: left;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border-bottom: 2px solid #334155;
+    }
+    td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #1e293b;
+      font-size: 0.83rem;
+      vertical-align: top;
+    }
+    tr:hover td {
+      background: #1e293b;
+    }
+    .CRITICAL {
+      color: #ef4444;
+      font-weight: bold;
+    }
+    .HIGH {
+      color: #f97316;
+      font-weight: bold;
+    }
+    .MEDIUM {
+      color: #f59e0b;
+      font-weight: 500;
+    }
+    .LOW {
+      color: #6ee7b7;
+    }
+    .footer {
+      text-align: center;
+      color: #475569;
+      font-size: 0.8rem;
+      margin-top: 50px;
+      padding-top: 20px;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🛡️ AWS Security Posture Dashboard</h1>
+  <p class="sub">
+    Generated: 2026-05-27 18:22 &nbsp;|&nbsp;
+    Region: ca-central-1 &nbsp;|&nbsp;
+    CIS AWS Foundations Benchmark v1.4
+  </p>
+
+  <div class="score">46.1%</div>
+  <p class="score-label">Compliance Score</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="num" style="color:#22c55e">35</div>
+      <div class="lbl">Passed</div>
+    </div>
+    <div class="card">
+      <div class="num" style="color:#ef4444">41</div>
+      <div class="lbl">Failed</div>
+    </div>
+    <div class="card">
+      <div class="num" style="color:#64748b">76</div>
+      <div class="lbl">Total</div>
+    </div>
+    <div class="card">
+      <div class="num" style="color:#ef4444">4</div>
+      <div class="lbl">Critical</div>
+    </div>
+    <div class="card">
+      <div class="num" style="color:#f97316">27</div>
+      <div class="lbl">High</div>
+    </div>
+    <div class="card">
+      <div class="num" style="color:#f59e0b">39</div>
+      <div class="lbl">Medium</div>
+    </div>
+    <div class="card">
+      <div class="num" style="color:#6ee7b7">6</div>
+      <div class="lbl">Low</div>
+    </div>
+  </div>
+
+  <h2 class="section-title">❌ Failed Findings — sorted by severity</h2>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:90px">Severity</th>
+        <th>Check</th>
+        <th>Resource</th>
+        <th>Remediation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td class="CRITICAL">CRITICAL</td><td>Ensure MFA is enabled for the root account</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">Using IAM console navigate to Dashboard and expand Activate MFA on your root account.</td></tr><tr><td class="HIGH">HIGH</td><td>Ensure the default security group of every VPC restricts all traffic.</td><td style="font-size:0.75rem">arn:aws:ec2:ca-central-1:337227273348:security-group/sg-008cda92cb52a37ed</td><td style="font-size:0.75rem;color:#94a3b8">Apply Zero Trust approach. Implement a process to scan and remediate unrestricted or overly permissi</td></tr><tr><td class="HIGH">HIGH</td><td>Ensure IAM AWS-Managed policies that allow full "*:*" administrative privileges are not attached</td><td style="font-size:0.75rem">arn:aws:iam::aws:policy/AdministratorAccess</td><td style="font-size:0.75rem;color:#94a3b8">It is more secure to start with a minimum set of permissions and grant additional permissions as nec</td></tr><tr><td class="HIGH">HIGH</td><td>Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">Enable MFA for the user's account. MFA is a simple best practice that adds an extra layer of protect</td></tr><tr><td class="HIGH">HIGH</td><td>Ensure multi-factor authentication (MFA) is enabled for all IAM users that have a console password.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:user/security-lab-admin</td><td style="font-size:0.75rem;color:#94a3b8">Enable MFA for the user's account. MFA is a simple best practice that adds an extra layer of protect</td></tr><tr><td class="HIGH">HIGH</td><td>Check S3 Account Level Public Access Block.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">You can enable Public Access Block at the account level to prevent the exposure of your data stored </td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure S3 bucket access logging is enabled on the CloudTrail S3 bucket</td><td style="font-size:0.75rem">arn:aws:cloudtrail:ca-central-1:337227273348:trail/security-lab-trail</td><td style="font-size:0.75rem;color:#94a3b8">Ensure that S3 buckets have Logging enabled. CloudTrail data events can be used in place of S3 bucke</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for changes to Network Access Control Lists (NACL).</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for changes to network gateways.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for route table changes.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for VPC changes.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for AWS Config configuration changes.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for CloudTrail configuration changes.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for AWS Management Console authentication failures.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for AWS Organizations changes.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for disabling or scheduled deletion of customer created KMS CMKs.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for S3 bucket policy changes.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for IAM policy changes.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for usage of root account.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for security group changes.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for Management Console sign-in without MFA.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure a log metric filter and alarm exist for unauthorized API calls.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that a metric filter and alarm be established for unauthorized requests.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure AWS Config is enabled in all regions.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended to enable AWS Config in all regions.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure no Network ACLs allow ingress from 0.0.0.0/0 to any port.</td><td style="font-size:0.75rem">arn:aws:ec2:ca-central-1:337227273348:network-acl/acl-0ba0d33aba5fdc92d</td><td style="font-size:0.75rem;color:#94a3b8">Apply Zero Trust approach. Implement a process to scan and remediate unrestricted or overly permissi</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure no Network ACLs allow ingress from 0.0.0.0/0 to SSH port 22</td><td style="font-size:0.75rem">arn:aws:ec2:ca-central-1:337227273348:network-acl/acl-0ba0d33aba5fdc92d</td><td style="font-size:0.75rem;color:#94a3b8">Apply Zero Trust approach. Implement a process to scan and remediate unrestricted or overly permissi</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure no Network ACLs allow ingress from 0.0.0.0/0 to Microsoft RDP port 3389</td><td style="font-size:0.75rem">arn:aws:ec2:ca-central-1:337227273348:network-acl/acl-0ba0d33aba5fdc92d</td><td style="font-size:0.75rem;color:#94a3b8">Apply Zero Trust approach. Implement a process to scan and remediate unrestricted or overly permissi</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure IAM password policy requires minimum length of 14 or greater</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">Ensure "Minimum password length" is checked under "Password Policy".</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure IAM password policy prevents password reuse: 24 or greater</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">Ensure "Number of passwords to remember" is set to 24.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure rotation for customer created KMS CMKs is enabled.</td><td style="font-size:0.75rem">arn:aws:kms:ca-central-1:337227273348:key/fe15ebb3-a09a-4848-9bb0-8084876dc615</td><td style="font-size:0.75rem;color:#94a3b8">For every KMS Customer Master Keys (CMKs), ensure that Rotate this key every year is enabled.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Check if S3 bucket MFA Delete is not enabled.</td><td style="font-size:0.75rem">arn:aws:s3:::security-lab-cloudtrail-ojasy</td><td style="font-size:0.75rem;color:#94a3b8">Adding MFA delete to an S3 bucket, requires additional authentication when you change the version st</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Check if S3 buckets have secure transport policy.</td><td style="font-size:0.75rem">arn:aws:s3:::security-lab-cloudtrail-ojasy</td><td style="font-size:0.75rem;color:#94a3b8">Ensure that S3 buckets have encryption in transit enabled.</td></tr><tr><td class="MEDIUM">MEDIUM</td><td>Ensure VPC Flow Logging is Enabled in all VPCs.</td><td style="font-size:0.75rem">arn:aws:ec2:ca-central-1:337227273348:vpc/vpc-0c308f8d78b977a64</td><td style="font-size:0.75rem;color:#94a3b8">It is recommended that VPC Flow Logs be enabled for packet Rejects for VPCs.</td></tr><tr><td class="LOW">LOW</td><td>Check if IAM Access Analyzer is enabled</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">Enable IAM Access Analyzer for all accounts, create analyzer and take action over it is recommendati</td></tr><tr><td class="LOW">LOW</td><td>Ensure CloudTrail trails are integrated with CloudWatch Logs</td><td style="font-size:0.75rem">arn:aws:cloudtrail:ca-central-1:337227273348:trail/security-lab-trail</td><td style="font-size:0.75rem;color:#94a3b8">Validate that the trails in CloudTrail have an arn set in the CloudWatchLogsLogGroupArn property.</td></tr><tr><td class="LOW">LOW</td><td>Check if S3 buckets have Object-level logging for read events is enabled in CloudTrail.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">Enable logs. Create an S3 lifecycle policy. Define use cases, metrics and automated responses where </td></tr><tr><td class="LOW">LOW</td><td>Check if S3 buckets have Object-level logging for write events is enabled in CloudTrail.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">Enable logs. Create an S3 lifecycle policy. Define use cases, metrics and automated responses where </td></tr><tr><td class="LOW">LOW</td><td>Ensure IAM policies are attached only to groups or roles</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:user/security-lab-admin</td><td style="font-size:0.75rem;color:#94a3b8">Remove any policy attached directly to the user. Use groups or roles instead.</td></tr><tr><td class="LOW">LOW</td><td>Check if Amazon Macie is enabled.</td><td style="font-size:0.75rem">arn:aws:iam::337227273348:root</td><td style="font-size:0.75rem;color:#94a3b8">Enable Amazon Macie and create appropriate jobs to discover sensitive data.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    AWS Security Lab &nbsp;|&nbsp; Prowler v3.11.3 &nbsp;|&nbsp;
+    May 2026
+  </div>
+
+</body>
+</html>
