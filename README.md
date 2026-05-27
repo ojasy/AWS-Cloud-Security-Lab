@@ -16,25 +16,7 @@ A fully automated AWS cloud security monitoring pipeline built on a real AWS acc
 This project builds a complete cloud security monitoring pipeline on a real AWS account. It detects suspicious API activity, alerts in real time with attacker geolocation, scans the account against the CIS AWS Foundations Benchmark, and delivers an automated daily security digest — all from scratch using Python and AWS native services.
 
 **Full pipeline:**
-
-```
-CloudTrail API Logs (S3)
-↓ Python Detection Engine — 6 MITRE ATT&CK Categories
-Suspicious Event Alerts → CSV + Security Hub
-
-GuardDuty Threat Detection
-↓ EventBridge Rule (Severity ≥ 7)
-Lambda Enrichment (Attacker GeoIP)
-↓ SNS → Email Alert
-
-Prowler CIS Scan (Kali Linux)
-↓ 187 Checks — CIS AWS Foundations Benchmark v1.4
-Custom Python HTML Dashboard
-
-All 3 Sources → AWS Security Hub (ASFF)
-↓ EventBridge Cron (9AM Daily)
-Lambda Daily Digest → SNS → Email
-```
+![Diagram](diagrams/aws_security_pipeline_diagram)
 
 ---
 
