@@ -162,7 +162,7 @@ This project builds a complete cloud security monitoring pipeline on a real AWS 
 ![GuardDuty](screenshots/03-02-guardduty-findings.png)
 
 ### 📧 Enriched Alert Email — with Attacker Geolocation
-![Alert Email](screenshots/05-07-daily-digest-email.png)
+![Alert Email](screenshots/03-08b-enriched-alert-email.png)
 
 ### 🔎 Prowler — Scan Running on Kali Linux
 ![Prowler Running](screenshots/04-04-prowler-running.png)
