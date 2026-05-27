@@ -16,6 +16,7 @@ A fully automated AWS cloud security monitoring pipeline built on a real AWS acc
 This project builds a complete cloud security monitoring pipeline on a real AWS account. It detects suspicious API activity, alerts in real time with attacker geolocation, scans the account against the CIS AWS Foundations Benchmark, and delivers an automated daily security digest — all from scratch using Python and AWS native services.
 
 **Full pipeline:**
+
 ![Diagram](diagrams/aws_security_pipeline_diagram.svg)
 
 ---
@@ -40,7 +41,7 @@ This project builds a complete cloud security monitoring pipeline on a real AWS 
 
 ## 🗺️ Architecture Diagram
 
-![Architecture](diagrams/architecture.png)
+![Diagram](diagrams/)
 
 ---
 
@@ -103,10 +104,10 @@ This project builds a complete cloud security monitoring pipeline on a real AWS 
 
 | Metric | Value |
 |---|---|
-| Total checks | 76 |
-| Failed | 76 |
+| Total checks | 67 |
+| Failed | 67 |
 | Critical findings | 4 |
-| High findings | 27 |
+| High findings | 18 |
 | Medium findings | 39 |
 | Low findings | 6 |
 
@@ -130,6 +131,16 @@ This project builds a complete cloud security monitoring pipeline on a real AWS 
 | Default SG allows all traffic | HIGH | Restricted default security group rules | ✅ Resolved |
 | EBS encryption disabled | MEDIUM | Enabled default EBS encryption in ca-central-1 | ✅ Resolved |
 | CloudWatch metric filters missing | MEDIUM | Documented as future enhancement | 📋 Planned |
+
+
+### After Remediation
+
+| Metric | Value |
+|---|---|
+| Total checks | 76 |
+| Passed | 35 |
+| Failed | 41 |
+| Compliance score | 46.1% |
 
 ---
 
