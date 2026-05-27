@@ -16,7 +16,7 @@ A fully automated AWS cloud security monitoring pipeline built on a real AWS acc
 This project builds a complete cloud security monitoring pipeline on a real AWS account. It detects suspicious API activity, alerts in real time with attacker geolocation, scans the account against the CIS AWS Foundations Benchmark, and delivers an automated daily security digest — all from scratch using Python and AWS native services.
 
 **Full pipeline:**
-![Diagram](diagrams/aws_security_pipeline_diagram)
+![Diagram](diagrams/aws_security_pipeline_diagram.svg)
 
 ---
 
