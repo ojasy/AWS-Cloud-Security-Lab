@@ -1,10 +1,13 @@
 # 🛡️ AWS Cloud Security Monitoring Lab
 
-Automated AWS security pipeline with real-time threat detection, CIS compliance scanning, and daily security digest — built on CloudTrail, GuardDuty, Prowler, and Security Hub.
+![AWS](https://img.shields.io/badge/AWS-Cloud_Security-orange?logo=amazonaws)
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+![Prowler](https://img.shields.io/badge/Prowler-v3.11.3-purple)
+![Status](https://img.shields.io/badge/Status-Complete-brightgreen)
 
-![screenshots/04-07-custom-dashboard.png](screenshots/04-07-custom-dashboard.png)
-![screenshots/03-08-enriched-alert-email.png](screenshots/03-08-enriched-alert-email.png)
-![screenshots/05-07-daily-digest-email.png](screenshots/05-07-daily-digest-email.png)
+A fully automated AWS cloud security monitoring pipeline built on a real AWS account. Detects suspicious API activity, alerts in real time with attacker geolocation, scans for CIS compliance misconfigurations, and delivers a daily security digest — all automated using Python and AWS native services.
+
+---
 
 ---
 
