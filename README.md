@@ -236,32 +236,23 @@ python scripts/import_to_securityhub.py
 
 ## 📁 Repository Structure
 
+## 📁 Repository Structure
+
 ```
-📦 AWS-Cloud-Security-Lab
-┣ 📂 screenshots
-┃ ┣ 🖼️ 01-01-aws-console-home.png
-┃ ┣ 🖼️ 02-01-cloudtrail-enabled.png
-┃ ┣ 🖼️ 02-05-analyzer-output.png
-┃ ┣ 🖼️ 03-02-guardduty-findings.png
-┃ ┣ 🖼️ 03-08-enriched-alert-email.png
-┃ ┣ 🖼️ 04-04-prowler-running.png
-┃ ┣ 🖼️ 04-07-custom-dashboard.png
-┃ ┣ 🖼️ 05-01-securityhub-enabled.png
-┃ ┣ 🖼️ 05-03-cloudtrail-imported.png
-┃ ┣ 🖼️ 05-07-daily-digest-email.png
-┃ ┣ 🖼️ 06-04-ebs-encryption.png
-┃ ┗ 🖼️ 06-05-improved-score.png
-┣ 📂 diagrams
-┃ ┗ 🗺️ architecture.png
-┣ 📂 scripts
-┃ ┣ 📜 cloudtrail_analyzer.py
-┃ ┣ 📜 lambda_enricher.py
-┃ ┣ 📜 prowler_dashboard.py
-┃ ┣ 📜 import_to_securityhub.py
-┃ ┗ 📜 daily_digest_lambda.py
-┣ 📂 configs
-┃ ┗ ⚙️ eventbridge_rule.json
-┗ 📄 README.md
+AWS-Cloud-Security-Lab/
+├── configs/
+│   └── eventbridge_rule.json
+├── diagrams/
+│   └── architecture.png
+├── screenshots/
+│   └── 13 step-by-step screenshots
+├── scripts/
+│   ├── cloudtrail_analyzer.py
+│   ├── lambda_enricher.py
+│   ├── prowler_dashboard.py
+│   ├── import_to_securityhub.py
+│   └── daily_digest_lambda.py
+└── README.md
 ```
 
 ---
