@@ -236,8 +236,6 @@ python scripts/import_to_securityhub.py
 
 ## 📁 Repository Structure
 
-## 📁 Repository Structure
-
 ```
 AWS-Cloud-Security-Lab/
 ├── configs/
