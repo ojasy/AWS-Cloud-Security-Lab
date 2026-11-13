@@ -137,7 +137,7 @@ This project builds a complete cloud security monitoring pipeline on a real AWS 
 
 | Metric | Value |
 |---|---|
-| Total checks | 67 |
+| Total checks | 76 |
 | Passed | 35 |
 | Failed | 41 |
 | Compliance score | 46.1% |
